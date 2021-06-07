@@ -90,7 +90,7 @@ contract FarmbCart is TokenRecipient, FractionalExponents  {
 
   }
 
-  function myStake(address user) public view returns (uint128, uint96, uint32) {
+  function myStake(address user) external view returns (uint128, uint96, uint32) {
     UserInfo memory info = userInfo[user];
     uint96 bcart = info.bcart + safe96(pending(info.amount, info.depositTs));
 
